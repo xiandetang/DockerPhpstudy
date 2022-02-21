@@ -2,7 +2,7 @@ FROM centos:7
 MAINTAINER jiujiude(393210556@qq.com)
 
 #安装xp
-RUN yum install -y wget crontabs && wget -O install.sh https://notdocker.xp.cn/install.sh && sh install.sh
+RUN wget -O install.sh https://notdocker.xp.cn/install.sh && sudo bash install.sh
     
 RUN echo '/usr/sbin/crond -s' >> /bootstrap.sh && \
     echo 'ping 127.0.0.1' >> /bootstrap.sh && \
